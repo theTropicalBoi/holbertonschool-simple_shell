@@ -1,5 +1,5 @@
 # Creating a Simple Shell in C
-**Explore the importance of a shell in a OS and learn how to create a simple shell using system call in C.**
+### Explore the importance of a shell in a OS and learn how to create a simple shell using system call in C.
 ---
 ## Tech Stack: 
 <p align="center">
@@ -21,3 +21,4 @@ Using `Ubuntu 24.04 LTS` to compile the program using gcc, with the option `gcc 
 ## Flowchart:
 
 ## Authors:
+

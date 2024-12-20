@@ -4,5 +4,10 @@
  */
 int main(void)
 {
-	printf();
+	if (isatty(STDIN_FILENO) == 1)
+		shell_interpreter();
+	else
+		no_shell_interpreter();
+
+	return (0);
 }

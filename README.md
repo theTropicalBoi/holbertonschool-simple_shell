@@ -10,8 +10,8 @@
 
 ## Requirement:
 - **Environment:** `Ubuntu 24.04 LTS`
-- **GNU Compiler Collection:** `gcc`
-- **Coding Style Checker:** [`betty`](https://github.com/hs-hq/Betty/tree/main)
+- **GNU Compiler Collection:** [`GCC 14.02`](https://gcc.gnu.org/)
+- **Coding Style Checker:** [`Betty`](https://github.com/hs-hq/Betty/tree/main)
 
 ## Compilation Command:
 Using `Ubuntu 24.04 LTS` to compile the program using `gcc`, with the option `-Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh`.

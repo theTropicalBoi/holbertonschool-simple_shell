@@ -5,16 +5,16 @@
  */
 void shell_interpreter(void)
 {
-        size_t n = 0;
-        char *buf = NULL;
+		size_t n = 0;
+		char *buf = NULL;
 
-        printf("$");
-        getline(&buf, &n, stdin);
-        printf("%s", buf);
-        printf("Buffer size: %ld\n", n);
+		printf("$");
+		getline(&buf, &n, stdin);
+		printf("%s", buf);
+		printf("Buffer size: %ld\n", n);
 
-        free(buf);
-        return (0);
+		free(buf);
+		return (0);
 }
 
 /**

@@ -5,9 +5,9 @@
 int main(void)
 {
 	if (isatty(STDIN_FILENO) == 1)
-		shell_interpreter();
+		shell_shell_interactive();
 	else
-		no_shell_interpreter();
+		no_shell_interactive();
 
 	return (0);
 }

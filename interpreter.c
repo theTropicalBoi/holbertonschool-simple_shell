@@ -6,7 +6,7 @@
 void shell_interactive(void)
 {
 		char *line = NULL;
-    	size_t len = 0;
+		size_t len = 0;
    		ssize_t read;
 
 		while (1) {
@@ -27,7 +27,7 @@ void shell_interactive(void)
 				printf("%s: command not found\n", line);
 		}
 
-    free(line);
+	free(line);
 }
 
 /**
@@ -35,8 +35,7 @@ void shell_interactive(void)
  */
 void no_shell_interactive(void)
 {
-	size_t n = 0;
-    char *buf = NULL;
+	char *buf = NULL;
 
 	if (buf) {
 		free(buf);
@@ -45,26 +44,24 @@ void no_shell_interactive(void)
 
 int execute_command(char *command)
 {
-    pid_t pid = fork();
+	pid_t pid = fork();
 
-    if (pid == -1) {
-        perror("fork");
-        return -1;
-    } else if (pid == 0) {
-        // Child process
-        char *args[MAX_ARGS];
-        args[0] = command;
-        args[1] = NULL;
+	if (pid == -1) {
+		perror("fork");
+		return -1;
+	} else if (pid == 0) {
+		char *args[MAX_ARGS];
+		args[0] = command;
+		args[1] = NULL;
 
-        if (execve(command, args, environ) == -1) {
-            perror("execve");
-            exit(EXIT_FAILURE);
-        }
-    } else {
-        // Parent process
-        int status;
-        waitpid(pid, &status, 0);
-    }
+		if (execve(command, args, environ) == -1) {
+			perror("execve");
+			exit(EXIT_FAILURE);
+		}
+	} else {
+		int status;
+		waitpid(pid, &status, 0);
+	}
 
-    return 0;
+	return 0;
 }

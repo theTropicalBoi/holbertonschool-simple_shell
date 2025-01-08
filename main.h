@@ -22,5 +22,6 @@ extern char **environ;
 void shell_interactive(void);
 void no_shell_interactive(void);
 int execute_command(char *command);
+void execute_command(char *input);
 
 #endif

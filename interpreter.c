@@ -65,3 +65,55 @@ int execute_command(char *command)
 
 	return 0;
 }
+
+/**
+ * execute_command - executes a command based on it's type
+ * Return: void
+ */
+void execute_command(char *input)
+{
+char *args[MAX_CMD_LENGTH];
+char *token;
+int i = 0;
+
+token = strtok(input, " \t\r\n");
+while (token != NULL)
+{
+args[i++] = token;
+token = strtok(NULL, " \t\r\n");
+}
+args[i] = NULL;
+
+if (args[0] == NULL)
+{
+printf("No command entered.\n");
+return;
+}
+if (execvp(args[0], args) == -1) 
+{
+perror("Error executing command");
+}
+}
+
+int main() 
+{
+char input[MAX_CMD_LENGTH];
+
+while (1)
+{
+printf("$ ");
+if (fgets(input, sizeof(input), stdin) == NULL)
+{
+perror("Error reading input");
+continue;
+}
+input[strcspn(input, "\n")] = '\0';
+
+if (strcmp(input, "exit") == 0) 
+{
+break;
+}
+execute_command(input);
+}
+return 0;
+}

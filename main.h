@@ -15,6 +15,7 @@
  */
 #define MAX_INPUT_SIZE 1024
 #define MAX_ARGS 64
+#define MAX_CMD_LENGTH 256
 
 extern char **environ;
 
@@ -22,6 +23,7 @@ extern char **environ;
 void shell_interactive(void);
 void no_shell_interactive(void);
 int execute_command(char *command);
+int _exit_builtin(char **array_of_tokens);
 void execute_command(char *input);
 
 #endif

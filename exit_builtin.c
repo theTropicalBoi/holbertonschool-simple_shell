@@ -13,5 +13,5 @@ int _exit_builtin(char **array_of_tokens)
 if (array_of_tokens[1] != NULL)
 exit(atoi(array_of_tokens[1]));
 else
-return(EXIT_CODE);
+return (EXIT_CODE);
 }
